@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Intro{
+    public static void main(String[] args){
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("Kol",120);
+        map.put("BLR",80);
+        map.put("MAS",140);
+        System.out.println(map);
+        if(map.containsKey("Indonesia")) {
+           System.out.println("key is present in the map");
+        } else {
+           System.out.println("key is not present in the map");
+        }
+        System.out.println(map.get("China")); //key exists
+        System.out.println(map.get("Indonesia")); //key doesn't exist
+        //Iteration (1)
+       for( Map.Entry<String, Integer> e : map.entrySet()) {
+           System.out.println(e.getKey());
+           System.out.println(e.getValue());
+       }
+
+
+       //Iteration (2)
+       Set<String> keys = map.keySet();
+       for(String key : keys) {
+           System.out.println(key+ " " + map.get(key));
+       }
+       map.remove("China");
+       System.out.println(map);
+    }
+}
